@@ -81,7 +81,7 @@
         "dataset": "@dataset",
         "batch_size": 1,
         "shuffle": false,
-        "num_workers": 4
+        "num_workers": 1
     },
     "inferer": {
         "_target_": "SlidingWindowInferer",
@@ -90,10 +90,12 @@
             96,
             96
         ],
-        "sw_batch_size": 2,
+        "sw_batch_size": 1,
         "overlap": 0.4,
         "padding_mode": "replicate",
-        "mode": "gaussian"
+        "mode": "gaussian",
+        "sw_device": "cuda",
+        "device": "cpu"
     },
     "postprocessing": {
         "_target_": "Compose",
